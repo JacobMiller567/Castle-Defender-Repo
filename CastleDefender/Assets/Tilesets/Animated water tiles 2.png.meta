@@ -1,0 +1,455 @@
+fileFormatVersion: 2
+guid: 33ff451bd4fa21c48a4d9085eb6aea76
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Animated water tiles_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 6
+        width: 448
+        height: 442
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 442, z: 0, w: 0}
+      outline:
+      - - {x: -93, y: 88}
+        - {x: -93, y: 133}
+        - {x: -93, y: 161}
+        - {x: 94, y: 161}
+        - {x: 94, y: 134}
+        - {x: 94, y: 88}
+      physicsShape:
+      - - {x: -94, y: 100}
+        - {x: -94, y: 147}
+        - {x: 96, y: 147}
+        - {x: 96, y: 100}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 744d098f06e8ce349b13d3582024b875
+      internalID: -1563588020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Animated water tiles_1
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 0
+        width: 448
+        height: 448
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -93, y: 88}
+        - {x: -93, y: 133}
+        - {x: -93, y: 161}
+        - {x: 94, y: 161}
+        - {x: 94, y: 134}
+        - {x: 94, y: 88}
+      physicsShape:
+      - - {x: -94, y: 100}
+        - {x: -94, y: 147}
+        - {x: 96, y: 147}
+        - {x: 96, y: 100}
+      tessellationDetail: 0
+      bones: []
+      spriteID: a262b717c7b8aa747a1aa4ef6c01e8c4
+      internalID: 944773803
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Animated water tiles_2
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 0
+        width: 448
+        height: 448
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -93, y: 88}
+        - {x: -93, y: 133}
+        - {x: -93, y: 161}
+        - {x: 94, y: 161}
+        - {x: 94, y: 134}
+        - {x: 94, y: 88}
+      physicsShape:
+      - - {x: -94, y: 100}
+        - {x: -94, y: 147}
+        - {x: 96, y: 147}
+        - {x: 96, y: 100}
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1a09e1fc9b55a94f9f9f6b9009d68e6
+      internalID: -1401372317
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Animated water tiles_3
+      rect:
+        serializedVersion: 2
+        x: 1344
+        y: 0
+        width: 448
+        height: 448
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 131}
+      outline:
+      - - {x: -93, y: 88}
+        - {x: -93, y: 133}
+        - {x: -93, y: 161}
+        - {x: 94, y: 161}
+        - {x: 94, y: 134}
+        - {x: 94, y: 88}
+      physicsShape:
+      - - {x: -94, y: 100}
+        - {x: -94, y: 147}
+        - {x: 96, y: 147}
+        - {x: 96, y: 100}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 765d6bee3cd971342ba7ac7dd5d163d7
+      internalID: -508825089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Animated water tiles_4
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 0
+        width: 448
+        height: 448
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 128}
+      outline:
+      - - {x: -93, y: 88}
+        - {x: -93, y: 133}
+        - {x: -93, y: 161}
+        - {x: 94, y: 161}
+        - {x: 94, y: 134}
+        - {x: 94, y: 88}
+      physicsShape:
+      - - {x: -94, y: 100}
+        - {x: -94, y: 147}
+        - {x: 96, y: 147}
+        - {x: 96, y: 100}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0766a100a383a4f44ad00d36c030810c
+      internalID: -146435486
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Animated water tiles_5
+      rect:
+        serializedVersion: 2
+        x: 2240
+        y: 0
+        width: 448
+        height: 448
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 129}
+      outline:
+      - - {x: -93, y: 88}
+        - {x: -93, y: 133}
+        - {x: -93, y: 161}
+        - {x: 94, y: 161}
+        - {x: 94, y: 134}
+        - {x: 94, y: 88}
+      physicsShape:
+      - - {x: -94, y: 100}
+        - {x: -94, y: 147}
+        - {x: 96, y: 147}
+        - {x: 96, y: 100}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2aa7bda7830d879479ef6d6d6f32f4c5
+      internalID: -1914685601
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Animated water tiles_6
+      rect:
+        serializedVersion: 2
+        x: 2688
+        y: 0
+        width: 448
+        height: 448
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 129}
+      outline:
+      - - {x: -93, y: 88}
+        - {x: -93, y: 133}
+        - {x: -93, y: 161}
+        - {x: 94, y: 161}
+        - {x: 94, y: 134}
+        - {x: 94, y: 88}
+      physicsShape:
+      - - {x: -94, y: 100}
+        - {x: -94, y: 147}
+        - {x: 96, y: 147}
+        - {x: 96, y: 100}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8059495a81d82ef4aa3b3754ec6e2073
+      internalID: -470353764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Animated water tiles_7
+      rect:
+        serializedVersion: 2
+        x: 3136
+        y: 0
+        width: 448
+        height: 448
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 128}
+      outline:
+      - - {x: -93, y: 88}
+        - {x: -93, y: 133}
+        - {x: -93, y: 161}
+        - {x: 94, y: 161}
+        - {x: 94, y: 134}
+        - {x: 94, y: 88}
+      physicsShape:
+      - - {x: -94, y: 100}
+        - {x: -94, y: 147}
+        - {x: 96, y: 147}
+        - {x: 96, y: 100}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50e140bda2d42d64e9084b8eb490387a
+      internalID: 1793865974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Animated water tiles_8
+      rect:
+        serializedVersion: 2
+        x: 3584
+        y: 0
+        width: 448
+        height: 448
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 129}
+      outline:
+      - - {x: -93, y: 88}
+        - {x: -93, y: 133}
+        - {x: -93, y: 161}
+        - {x: 94, y: 161}
+        - {x: 94, y: 134}
+        - {x: 94, y: 88}
+      physicsShape:
+      - - {x: -94, y: 100}
+        - {x: -94, y: 147}
+        - {x: 96, y: 147}
+        - {x: 96, y: 100}
+      tessellationDetail: 0
+      bones: []
+      spriteID: b40a1624262528e4f864ad85a6a25bad
+      internalID: 737269732
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Animated water tiles_9
+      rect:
+        serializedVersion: 2
+        x: 4031
+        y: 0
+        width: 448
+        height: 448
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 129}
+      outline:
+      - - {x: -93, y: 88}
+        - {x: -93, y: 133}
+        - {x: -93, y: 161}
+        - {x: 94, y: 161}
+        - {x: 94, y: 134}
+        - {x: 94, y: 88}
+      physicsShape:
+      - - {x: -94, y: 100}
+        - {x: -94, y: 147}
+        - {x: 96, y: 147}
+        - {x: 96, y: 100}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 212ac11be8bfd5a4a84a4bbd979a6bf3
+      internalID: -1025904769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Animated water tiles_0: -1563588020
+      Animated water tiles_1: 944773803
+      Animated water tiles_2: -1401372317
+      Animated water tiles_3: -508825089
+      Animated water tiles_4: -146435486
+      Animated water tiles_5: -1914685601
+      Animated water tiles_6: -470353764
+      Animated water tiles_7: 1793865974
+      Animated water tiles_8: 737269732
+      Animated water tiles_9: -1025904769
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
