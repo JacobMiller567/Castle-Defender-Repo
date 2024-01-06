@@ -172,7 +172,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   rb: {fileID: 6132223195568433719}
-  rockSpeed: 55
+  rockSpeed: 50
   damage: 6
   splashDamage: 3
   allowRotation: 0

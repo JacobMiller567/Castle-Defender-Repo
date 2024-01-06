@@ -18,7 +18,7 @@ public class TowerClicked : MonoBehaviour
 
     void Update() 
     {
-        if(Input.GetMouseButtonDown(1) && manage.towerIsPurchased == true) 
+        if(Input.GetMouseButtonDown(1) && manage.towerIsPurchased == true) // || Input.GetTouch(1)
         {
             Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             Collider2D hitCollider = Physics2D.OverlapPoint(mousePosition);
@@ -32,7 +32,7 @@ public class TowerClicked : MonoBehaviour
         }
     }
 
-    void OnMouseDown()
+    void OnMouseDown() // || Input.GetTouch(0)
     {
         if (manage.MaxedLevel == true && upgradeButton.activeSelf == true)
         {
