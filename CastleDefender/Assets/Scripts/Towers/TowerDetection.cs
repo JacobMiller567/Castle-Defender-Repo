@@ -136,7 +136,7 @@ public class TowerDetection : MonoBehaviour
                     audio.Play();
                     proj.SetTarget(closestEnemy);
                     StartCoroutine(Reload());
-                    animDelay = true;           
+                    animDelay = true;    
                 }
             }
         }
@@ -175,10 +175,6 @@ public class TowerDetection : MonoBehaviour
         manage.TowerRange = radiusHolder;
         manage.TowerSpeed = speedHolder;
     }
-
-    
-
-
 
     IEnumerator Reload()
     {

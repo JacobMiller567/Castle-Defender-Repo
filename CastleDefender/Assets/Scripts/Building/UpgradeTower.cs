@@ -53,16 +53,16 @@ public class UpgradeTower : MonoBehaviour
             {
                 costText.text = "Cost: $"+upgradeCost;
                 freezeText.text = "Freeze: (" + towers[manager.TowerLevel].GetComponent<TowerSlowMotion>().slowAmount + ")" + " -" + "0.1";
-                speedText.text = "Speed: "+ "(" +manager.TowerSpeed +")" + " +" + ((towers[manager.TowerLevel + 1].GetComponent<TowerSlowMotion>().reloadSpeed) - manager.TowerSpeed);
-                rangeText.text = "Range: "+ "(" +manager.TowerRange +"m)" + " +" + (( towers[manager.TowerLevel + 1].GetComponent<TowerSlowMotion>().freezeRadius) - manager.TowerRange);
+                speedText.text = "Speed: "+ "(" +manager.TowerSpeed +")" + " +" + (Mathf.Round(((towers[manager.TowerLevel + 1].GetComponent<TowerSlowMotion>().reloadSpeed)- manager.TowerSpeed)*100f)/100f) ;
+                rangeText.text = "Range: "+ "(" +manager.TowerRange +")" + " +" + (Mathf.Round((( towers[manager.TowerLevel + 1].GetComponent<TowerSlowMotion>().freezeRadius) - manager.TowerRange)*100f)/100f);
                 freezeTimeText.text = "Time: "+ "(" +towers[manager.TowerLevel].GetComponent<TowerSlowMotion>().freezeTime +")" + " +" + ((towers[manager.TowerLevel + 1].GetComponent<TowerSlowMotion>().freezeTime) - towers[manager.TowerLevel].GetComponent<TowerSlowMotion>().freezeTime);
             }
             if (manager.TowerLevel == 1)
             {
                 costText.text = "Cost: $"+upgradeCost;
                 freezeText.text = "Freeze: (" + towers[manager.TowerLevel].GetComponent<TowerSlowMotion>().slowAmount + ")" + " -" + "0.1";
-                speedText.text = "Speed: "+ "(" +manager.TowerSpeed +")" + " +" + ((towers[manager.TowerLevel + 1].GetComponent<TowerSlowMotion>().reloadSpeed) - manager.TowerSpeed);
-                rangeText.text = "Range: "+ "(" +manager.TowerRange +"m)" + " +" + (( towers[manager.TowerLevel + 1].GetComponent<TowerSlowMotion>().freezeRadius) - manager.TowerRange);
+                speedText.text = "Speed: "+ "(" +manager.TowerSpeed +")" + " +" + (Mathf.Round(((towers[manager.TowerLevel + 1].GetComponent<TowerSlowMotion>().reloadSpeed) - manager.TowerSpeed)*100f)/100f);
+                rangeText.text = "Range: "+ "(" +manager.TowerRange +")" + " +" + (Mathf.Round((( towers[manager.TowerLevel + 1].GetComponent<TowerSlowMotion>().freezeRadius) - manager.TowerRange)*100f)/100f);
                 freezeTimeText.text = "Time: "+ "(" +towers[manager.TowerLevel].GetComponent<TowerSlowMotion>().freezeTime +")" + " +" + ((towers[manager.TowerLevel + 1].GetComponent<TowerSlowMotion>().freezeTime) - towers[manager.TowerLevel].GetComponent<TowerSlowMotion>().freezeTime); //Mathf.Round (f * 100.0f) * 0.01f;
             }
             if (manager.TowerLevel == 2)
@@ -82,8 +82,8 @@ public class UpgradeTower : MonoBehaviour
                 costText.text = "Cost: $"+upgradeCost;
                 int currentDamage = towers[manager.TowerLevel].GetComponent<TowerFlame>().burnDamage;
                 damageText.text = "Damage: (" + towers[manager.TowerLevel].GetComponent<TowerFlame>().burnDamage + ")" + " +" + (( towers[manager.TowerLevel + 1].GetComponent<TowerFlame>().burnDamage) - currentDamage);
-                speedText.text = "Speed: "+ "(" +manager.TowerSpeed +")" + " +" + ((towers[manager.TowerLevel + 1].GetComponent<TowerFlame>().reloadSpeed) - manager.TowerSpeed);
-                rangeText.text = "Range: "+ "(" +manager.TowerRange +"m)" + " +" + (( towers[manager.TowerLevel + 1].GetComponent<TowerFlame>().flameRadius) - manager.TowerRange);
+                speedText.text = "Speed: "+ "(" +manager.TowerSpeed +")" + " +" + (Mathf.Round(((towers[manager.TowerLevel + 1].GetComponent<TowerFlame>().reloadSpeed) - manager.TowerSpeed)*100f)/100f);
+                rangeText.text = "Range: "+ "(" +manager.TowerRange +")" + " +" + (Mathf.Round((( towers[manager.TowerLevel + 1].GetComponent<TowerFlame>().flameRadius) - manager.TowerRange)*100f)/100f);
                 burnTimeText.text = "Time: "+ "(" +towers[manager.TowerLevel].GetComponent<TowerFlame>().burnTime +")" + " +" + ((towers[manager.TowerLevel + 1].GetComponent<TowerFlame>().burnTime) - towers[manager.TowerLevel].GetComponent<TowerFlame>().burnTime);
             }
             if (manager.TowerLevel == 1)
@@ -91,8 +91,8 @@ public class UpgradeTower : MonoBehaviour
                 costText.text = "Cost: $"+upgradeCost;
                 int currentDamage = towers[manager.TowerLevel].GetComponent<TowerFlame>().burnDamage;
                 damageText.text = "Damage: (" + towers[manager.TowerLevel].GetComponent<TowerFlame>().burnDamage + ")" + " +" + (( towers[manager.TowerLevel + 1].GetComponent<TowerFlame>().burnDamage) - currentDamage);
-                speedText.text = "Speed: "+ "(" +manager.TowerSpeed +")" + " +" + Mathf.Round(((towers[manager.TowerLevel + 1].GetComponent<TowerFlame>().reloadSpeed) - manager.TowerSpeed) * 10f) / 10f;//((towers[manager.TowerLevel + 1].GetComponent<TowerFlame>().reloadSpeed) - manager.TowerSpeed);
-                rangeText.text = "Range: "+ "(" +manager.TowerRange +"m)" + " +" + ((towers[manager.TowerLevel + 1].GetComponent<TowerFlame>().flameRadius) - manager.TowerRange);
+                speedText.text = "Speed: "+ "(" +(Mathf.Round(manager.TowerSpeed*100f)/100f) +")" + " +" + (Mathf.Round(((towers[manager.TowerLevel + 1].GetComponent<TowerFlame>().reloadSpeed) - manager.TowerSpeed)*100f)/100f);//((towers[manager.TowerLevel + 1].GetComponent<TowerFlame>().reloadSpeed) - manager.TowerSpeed);
+                rangeText.text = "Range: "+ "(" +(Mathf.Round(manager.TowerRange*100f)/100f) +")" + " +" + (Mathf.Round(((towers[manager.TowerLevel + 1].GetComponent<TowerFlame>().flameRadius) - manager.TowerRange )*100f)/100f);
                 burnTimeText.text = "Time: (" + towers[manager.TowerLevel].GetComponent<TowerFlame>().burnTime +")" + " +" + ((towers[manager.TowerLevel + 1].GetComponent<TowerFlame>().burnTime) - towers[manager.TowerLevel].GetComponent<TowerFlame>().burnTime);
             }
             if (manager.TowerLevel == 2)
@@ -112,18 +112,18 @@ public class UpgradeTower : MonoBehaviour
                 costText.text = "Cost: $"+upgradeCost;
                 int currentDamage = bullets[manager.TowerLevel].GetComponent<RockExplosion>().damage;
                 damageText.text = "Damage: (" + bullets[manager.TowerLevel].GetComponent<RockExplosion>().damage + ")" + " +" + ((bullets[manager.TowerLevel + 1].GetComponent<RockExplosion>().damage) - currentDamage);
-                speedText.text = "Speed: "+ "(" +manager.TowerSpeed +")" + " -" + (manager.TowerSpeed -(towers[manager.TowerLevel + 1].GetComponentInChildren<TowerDetection>().reloadSpeed));
-                rangeText.text = "Range : "+ "(" +manager.TowerRange +"m)" + " +" + (( towers[manager.TowerLevel + 1].GetComponentInChildren<TowerDetection>().detectionRange) - manager.TowerRange);
-                splashRadiusText.text = "Splash: (" + bullets[manager.TowerLevel].GetComponent<RockExplosion>().explosionRange +"m)" + " +" + ((bullets[manager.TowerLevel + 1].GetComponent<RockExplosion>().explosionRange) - bullets[manager.TowerLevel].GetComponent<RockExplosion>().explosionRange);
+                speedText.text = "Speed: "+ "(" +manager.TowerSpeed +")" + " -" + (Mathf.Round((manager.TowerSpeed -(towers[manager.TowerLevel + 1].GetComponentInChildren<TowerDetection>().reloadSpeed))*100f)/100f);// TEST
+                rangeText.text = "Range : "+ "(" +manager.TowerRange +")" + " +" + (Mathf.Round((( towers[manager.TowerLevel + 1].GetComponentInChildren<TowerDetection>().detectionRange) - manager.TowerRange)*100f)/100f); //TEST
+                splashRadiusText.text = "Splash: (" + bullets[manager.TowerLevel].GetComponent<RockExplosion>().explosionRange +")" + " +" + ((bullets[manager.TowerLevel + 1].GetComponent<RockExplosion>().explosionRange) - bullets[manager.TowerLevel].GetComponent<RockExplosion>().explosionRange);
             }
             if (manager.TowerLevel == 1)
             {
                 costText.text = "Cost: $"+upgradeCost;
                 int currentDamage = bullets[manager.TowerLevel].GetComponent<RockExplosion>().damage;
                 damageText.text = "Damage: (" + bullets[manager.TowerLevel].GetComponent<RockExplosion>().damage + ")" + " +" + ((bullets[manager.TowerLevel + 1].GetComponent<RockExplosion>().damage) - currentDamage);
-                speedText.text = "Speed: "+ "(" +manager.TowerSpeed +")" + " -" + (manager.TowerSpeed - (towers[manager.TowerLevel + 1].GetComponentInChildren<TowerDetection>().reloadSpeed));
-                rangeText.text = "Range : "+ "(" +manager.TowerRange +"m)" + " +" + (( towers[manager.TowerLevel + 1].GetComponentInChildren<TowerDetection>().detectionRange) - manager.TowerRange);
-                splashRadiusText.text = "Splash: (" + bullets[manager.TowerLevel].GetComponent<RockExplosion>().explosionRange +"m)" + " +" + ((bullets[manager.TowerLevel + 1].GetComponent<RockExplosion>().explosionRange) - bullets[manager.TowerLevel].GetComponent<RockExplosion>().explosionRange);
+                speedText.text = "Speed: "+ "(" +manager.TowerSpeed +")" + " -" + (Mathf.Round((manager.TowerSpeed - (towers[manager.TowerLevel + 1].GetComponentInChildren<TowerDetection>().reloadSpeed))*100f)/100f);
+                rangeText.text = "Range : "+ "(" +manager.TowerRange +")" + " +" + (Mathf.Round((( towers[manager.TowerLevel + 1].GetComponentInChildren<TowerDetection>().detectionRange) - manager.TowerRange)*100f)/100f);
+                splashRadiusText.text = "Splash: (" + bullets[manager.TowerLevel].GetComponent<RockExplosion>().explosionRange +")" + " +" + ((bullets[manager.TowerLevel + 1].GetComponent<RockExplosion>().explosionRange) - bullets[manager.TowerLevel].GetComponent<RockExplosion>().explosionRange);
             }
             if (manager.TowerLevel == 2)
             {
@@ -142,8 +142,8 @@ public class UpgradeTower : MonoBehaviour
                 costText.text = "Cost: $"+upgradeCost;
                 int currentDamage = bullets[manager.TowerLevel].GetComponent<LightningBolt>().lightningDamage;
                 damageText.text = "Damage: (" + bullets[manager.TowerLevel].GetComponent<LightningBolt>().lightningDamage + ")" + " +" + ((bullets[manager.TowerLevel + 1].GetComponent<LightningBolt>().lightningDamage) - currentDamage);
-                speedText.text = "Speed: "+ "(" +manager.TowerSpeed +")" + " -" + (manager.TowerSpeed - (towers[manager.TowerLevel + 1].GetComponentInChildren<TowerDetection>().reloadSpeed) );
-                rangeText.text = "Range: "+ "(" +manager.TowerRange +"m)" + " +" + (( towers[manager.TowerLevel + 1].GetComponentInChildren<TowerDetection>().detectionRange) - manager.TowerRange);
+                speedText.text = "Speed: "+ "(" +manager.TowerSpeed +")" + " -" + (Mathf.Round(((manager.TowerSpeed - (towers[manager.TowerLevel + 1].GetComponentInChildren<TowerDetection>().reloadSpeed)))*100f)/100f); //TEST
+                rangeText.text = "Range: "+ "(" +manager.TowerRange +")" + " +" + (Mathf.Round(((towers[manager.TowerLevel + 1].GetComponentInChildren<TowerDetection>().detectionRange) - manager.TowerRange)*100f)/100f);
                 bounceText.text = "Richochet: "+ "(" + bullets[manager.TowerLevel].GetComponent<LightningBolt>().maxHits +")" + " +" + ((bullets[manager.TowerLevel + 1].GetComponent<LightningBolt>().maxHits) -  bullets[manager.TowerLevel].GetComponent<LightningBolt>().maxHits);
             }
             if (manager.TowerLevel == 1)
@@ -151,8 +151,8 @@ public class UpgradeTower : MonoBehaviour
                 costText.text = "Cost: $"+upgradeCost;
                 int currentDamage = bullets[manager.TowerLevel].GetComponent<LightningBolt>().lightningDamage;
                 damageText.text = "Damage: (" + bullets[manager.TowerLevel].GetComponent<LightningBolt>().lightningDamage + ")" + " +" + ((bullets[manager.TowerLevel + 1].GetComponent<LightningBolt>().lightningDamage) - currentDamage);
-                speedText.text = "Speed: "+ "(" +manager.TowerSpeed +")" + " -" + (manager.TowerSpeed - (towers[manager.TowerLevel + 1].GetComponentInChildren<TowerDetection>().reloadSpeed));
-                rangeText.text = "Range: "+ "(" +manager.TowerRange +"m)" + " +" + (( towers[manager.TowerLevel + 1].GetComponentInChildren<TowerDetection>().detectionRange) - manager.TowerRange);
+                speedText.text = "Speed: "+ "(" +manager.TowerSpeed +")" + " -" + (Mathf.Round(((manager.TowerSpeed - (towers[manager.TowerLevel + 1].GetComponentInChildren<TowerDetection>().reloadSpeed)))*100f)/100f); //TEST
+                rangeText.text = "Range: "+ "(" +manager.TowerRange +")" + " +" + (Mathf.Round(((towers[manager.TowerLevel + 1].GetComponentInChildren<TowerDetection>().detectionRange) - manager.TowerRange)*100f)/100f);
                 bounceText.text = "Richochet: "+ "(" +bullets[manager.TowerLevel].GetComponent<LightningBolt>().maxHits +")" + " +" + ((bullets[manager.TowerLevel + 1].GetComponent<LightningBolt>().maxHits) - bullets[manager.TowerLevel].GetComponent<LightningBolt>().maxHits);
             }
             if (manager.TowerLevel == 2)
@@ -170,23 +170,23 @@ public class UpgradeTower : MonoBehaviour
             if (manager.TowerLevel == 0)
             {
                 costText.text = "Cost: $"+upgradeCost;
-                blessingRadiusText.text = "Radius: (" + towers[manager.TowerLevel].GetComponentInChildren<WispBlessing>().rangeBlessing + ")" + " +" + ((towers[manager.TowerLevel + 1].GetComponentInChildren<WispBlessing>().rangeBlessing) - towers[manager.TowerLevel].GetComponentInChildren<WispBlessing>().rangeBlessing);
-                speedText.text = "Speed: "+ "(" +manager.TowerSpeed +")" + " -" + (manager.TowerSpeed - (towers[manager.TowerLevel + 1].GetComponentInChildren<WispBlessing>().abilityCooldown));
-                rangeText.text = "Range: "+ "(" +manager.TowerRange +"m)" + " +" + (( towers[manager.TowerLevel + 1].GetComponentInChildren<WispBlessing>().blessingRadius) - manager.TowerRange);
+                rangeText.text = "Range: "+ "(" +manager.TowerRange +")" + " +" + (( towers[manager.TowerLevel + 1].GetComponentInChildren<WispBlessing>().blessingRadius) - manager.TowerRange);
+                blessingRadiusText.text = "Radius: "+  "(10%)" + " +" + (Mathf.Round(((towers[manager.TowerLevel + 1].GetComponentInChildren<WispBlessing>().rangeBlessing) - towers[manager.TowerLevel].GetComponentInChildren<WispBlessing>().rangeBlessing)*10f)/10f);
+                blessingSpeedText.text = "Speed: "+ "(10%)" + " +" + ((towers[manager.TowerLevel + 1].GetComponentInChildren<WispBlessing>().speedBlessing) - towers[manager.TowerLevel].GetComponentInChildren<WispBlessing>().speedBlessing);
             }
             if (manager.TowerLevel == 1)
             {
                 costText.text = "Cost: $"+upgradeCost;
-                blessingRadiusText.text = "Radius: (" + towers[manager.TowerLevel].GetComponentInChildren<WispBlessing>().rangeBlessing + ")" + " +" + ((towers[manager.TowerLevel + 1].GetComponentInChildren<WispBlessing>().rangeBlessing) - towers[manager.TowerLevel].GetComponentInChildren<WispBlessing>().rangeBlessing);
-                speedText.text = "Speed: "+ "(" +manager.TowerSpeed +")" + " -" + (manager.TowerSpeed - (towers[manager.TowerLevel + 1].GetComponentInChildren<WispBlessing>().abilityCooldown));
-                rangeText.text = "Range: "+ "(" +manager.TowerRange +"m)" + " +" + (( towers[manager.TowerLevel + 1].GetComponentInChildren<WispBlessing>().blessingRadius) - manager.TowerRange);
+                rangeText.text = "Range: "+ "(" +manager.TowerRange +")" + " +" + (( towers[manager.TowerLevel + 1].GetComponentInChildren<WispBlessing>().blessingRadius) - manager.TowerRange);
+                blessingRadiusText.text = "Radius: "+ "(20%)" + " +" + (Mathf.Round(((towers[manager.TowerLevel + 1].GetComponentInChildren<WispBlessing>().rangeBlessing) - towers[manager.TowerLevel].GetComponentInChildren<WispBlessing>().rangeBlessing)*100f)/100f); //TEST
+                blessingSpeedText.text = "Speed: "+ "(20%)" + " +" + ((towers[manager.TowerLevel + 1].GetComponentInChildren<WispBlessing>().speedBlessing) - towers[manager.TowerLevel].GetComponentInChildren<WispBlessing>().speedBlessing);
             }
             if (manager.TowerLevel == 2)
             {
                 costText.text = "Cost: Max Level";
-                blessingRadiusText.text = "Radius: (" + towers[manager.TowerLevel].GetComponentInChildren<WispBlessing>().rangeBlessing + ")";
-                speedText.text = "Speed: "+ "(" +manager.TowerSpeed +")";
                 rangeText.text = "Range: "+ "(" +manager.TowerRange +"m)";
+                blessingRadiusText.text = "Radius: "+ "(25%)";
+                blessingSpeedText.text = "Speed: "+ "(25%)";
             }
         }
         else // Archer Tower, Crossbow Tower, Slingshot Tower
@@ -196,17 +196,17 @@ public class UpgradeTower : MonoBehaviour
                 costText.text = "Cost: $"+upgradeCost;
                 int currentDamage = bullets[manager.TowerLevel].GetComponent<Arrow>().damage;
                 damageText.text = "Damage: (" + bullets[manager.TowerLevel].GetComponent<Arrow>().damage + ")" + " +" + ((bullets[manager.TowerLevel + 1].GetComponent<Arrow>().damage) - currentDamage);
-               // speedText.text = "Speed: "+ "(" +manager.TowerSpeed +")" + " -" + ( manager.TowerSpeed - (towers[manager.TowerLevel + 1].GetComponentInChildren<TowerDetection>().reloadSpeed ) - Mathf.Round(towers[manager.TowerLevel + 1].GetComponentInChildren<TowerDetection>().reloadSpeed * manager.BlessedSpeedMultiplier));
-                speedText.text = "Speed: "+ "(" +manager.TowerSpeed +")" + " -" + ( manager.TowerSpeed - (towers[manager.TowerLevel + 1].GetComponentInChildren<TowerDetection>().reloadSpeed));
-                rangeText.text = "Range: "+ "(" +manager.TowerRange +"m)" + " +" +  (Mathf.Round((( towers[manager.TowerLevel + 1].GetComponentInChildren<TowerDetection>().detectionRange) - manager.TowerRange)*10f)/10f);
+                //speedText.text = "Speed: "+ "(" +manager.TowerSpeed +")" + " -" + ( manager.TowerSpeed - (towers[manager.TowerLevel + 1].GetComponentInChildren<TowerDetection>().reloadSpeed * manager.BlessedSpeedMultiplier));
+                speedText.text = "Speed: "+ "(" +manager.TowerSpeed +")" + " -" + (Mathf.Round((manager.TowerSpeed - (towers[manager.TowerLevel + 1].GetComponentInChildren<TowerDetection>().reloadSpeed))*100f)/100f);
+                rangeText.text = "Range: "+ "(" +manager.TowerRange +")" + " +" +  (Mathf.Round((( towers[manager.TowerLevel + 1].GetComponentInChildren<TowerDetection>().detectionRange) - manager.TowerRange)*100f)/100f);
             }
             if (manager.TowerLevel == 1)
             {
                 costText.text = "Cost: $"+upgradeCost;
                 int currentDamage = bullets[manager.TowerLevel].GetComponent<Arrow>().damage;
                 damageText.text = "Damage: (" + bullets[manager.TowerLevel].GetComponent<Arrow>().damage + ")" + " +" + ((bullets[manager.TowerLevel + 1].GetComponent<Arrow>().damage) - currentDamage);
-                speedText.text = "Speed: "+ "(" +manager.TowerSpeed +")" + " -" + (manager.TowerSpeed - (towers[manager.TowerLevel + 1].GetComponentInChildren<TowerDetection>().reloadSpeed));
-                rangeText.text = "Range: "+ "(" +manager.TowerRange +"m)" + " +" + (( towers[manager.TowerLevel + 1].GetComponentInChildren<TowerDetection>().detectionRange) - manager.TowerRange);
+                speedText.text = "Speed: "+ "(" +manager.TowerSpeed +")" + " -" + (Mathf.Round((manager.TowerSpeed - (towers[manager.TowerLevel + 1].GetComponentInChildren<TowerDetection>().reloadSpeed))*100f)/100f);
+                rangeText.text = "Range: "+ "(" +manager.TowerRange +")" + " +" + (Mathf.Round((( towers[manager.TowerLevel + 1].GetComponentInChildren<TowerDetection>().detectionRange) - manager.TowerRange)*100f)/100f);
             }
             if (manager.TowerLevel == 2)
             {

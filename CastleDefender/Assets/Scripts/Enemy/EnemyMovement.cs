@@ -7,7 +7,9 @@ public class EnemyMovement : MonoBehaviour
     [SerializeField] private Rigidbody2D rb;
     [Header("Attributes")]
     [SerializeField] public float speed;
+    public bool LevelOne;
     public bool LevelTwo;
+    public bool LevelThree;
 
     private Transform target;
     public int pathIndex = 0; 
@@ -22,20 +24,23 @@ public class EnemyMovement : MonoBehaviour
     {
         speedHolder = speed;
         
-        if (LevelTwo == false)
+        if (LevelOne)
         {
             target = LevelManager.main.Waypoints[pathIndex];
         }
-        if (LevelTwo == true)
+        if (LevelTwo)
         {
             ChooseNewPath();
+        }
+        if (LevelThree)
+        {
+            NewPathLevelThree();
         }
     }
 
     private void Update()
     {
-
-        if (LevelTwo == false)
+        if (LevelOne)
         {
             if (Vector2.Distance(target.position, transform.position) <= 0.1f)
             {
@@ -67,6 +72,23 @@ public class EnemyMovement : MonoBehaviour
                     target = newPathTransform[pathIndex]; 
                 }
             }
+        }
+
+        if (LevelThree == true)
+        {
+            if (Vector2.Distance(target.position, transform.position) <= 0.1f)
+            {
+                pathIndex++;
+                
+                if (pathIndex == newPathTransform.Length)
+                {
+                    return;
+                }
+                else
+                {
+                    target = newPathTransform[pathIndex]; 
+                }
+            }
         }   
     }
 
@@ -75,9 +97,10 @@ public class EnemyMovement : MonoBehaviour
         Vector2 direction = (target.position - transform.position);
         float distance = direction.magnitude;
         Vector2 velocity = direction * (speed / distance);
+        if (float.IsNaN(velocity.x) || float.IsNaN(velocity.y)) return;
         rb.velocity = velocity;
 
-        if (LevelTwo == false)
+        if (LevelOne)
         {
             if (pathIndex == 8) 
             {
@@ -88,7 +111,7 @@ public class EnemyMovement : MonoBehaviour
                 transform.rotation = Quaternion.Euler(0, 0, 0); // Rotates enemy to the right
             } 
         }
-        if (LevelTwo == true)
+        if (LevelTwo)
         {
             if (topPath == true) 
             {
@@ -112,7 +135,6 @@ public class EnemyMovement : MonoBehaviour
                 }    
             }
         }
-
         transform.position = new Vector3(transform.position.x, transform.position.y, 0); 
     }
 
@@ -144,6 +166,27 @@ public class EnemyMovement : MonoBehaviour
         }
     }
 
+    public void NewPathLevelThree()
+    {
+        pathIndex = 0; 
+        float newPath = Random.Range(0, 4); 
+        if (newPath == 0 || newPath == 1)
+        {
+            // Left path
+            target = LevelManager.main.LeftPath[pathIndex];
+            newPathTransform = LevelManager.main.LeftPath;
+            transform.position = target.position; 
+            transform.rotation = Quaternion.Euler(0, 0, 0);
+        }
+        if (newPath == 2 || newPath == 3)
+        {
+            // Right path
+            target = LevelManager.main.RightPath[pathIndex];
+            newPathTransform = LevelManager.main.RightPath;
+            transform.position = target.position; 
+            transform.rotation = Quaternion.Euler(0, 180, 0); 
+        }
+    }
 
     public void UpdateSpeed(float newSpeed)
     {

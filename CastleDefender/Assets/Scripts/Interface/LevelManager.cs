@@ -11,6 +11,9 @@ public class LevelManager : MonoBehaviour
     public Transform[] TopPath;
     public Transform[] MiddlePath;
     public Transform[] BottomPath;
+    [Header("Level 3")]
+    public Transform[] LeftPath;
+    public Transform[] RightPath;
 
     private void Awake()
     {

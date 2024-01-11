@@ -93,8 +93,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 0.14
-  m_fontSizeBase: 0.14
+  m_fontSize: 0.15
+  m_fontSizeBase: 0.15
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -129,7 +129,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -0.40017867, y: 0.64423573, z: -0.6168182, w: 0}
+  m_margin: {x: -0.43045646, y: 0.64423573, z: -0.65718853, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -177,7 +177,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -0.08234997, y: -0.056085475}
-  m_SizeDelta: {x: 2, y: 2}
+  m_SizeDelta: {x: 2.2, y: 2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &223574947825328377
 CanvasRenderer:
@@ -386,6 +386,7 @@ MonoBehaviour:
     m_Bits: 0
   audio: {fileID: 1185473828648011470}
   changeTargetType: 0
+  towerBlessed: 0
   color: {r: 1, g: 0, b: 0, a: 1}
 --- !u!1 &5171178131485451449
 GameObject:
@@ -422,7 +423,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.10299999, y: -0.131}
+  m_AnchoredPosition: {x: -0.18000004, y: -0.131}
   m_SizeDelta: {x: 1, y: 1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3820411623511830164
@@ -516,7 +517,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -0.37191212, y: 0.64423573, z: -0.6248603, w: 0}
+  m_margin: {x: -0.37191212, y: 0.64423573, z: -0.8065262, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -1035,6 +1036,7 @@ MonoBehaviour:
   TowerLevel: 0
   MaxedLevel: 0
   TowerCost: 110
+  PreviousUpgradeCost: 0
   TowerRange: 0
   TowerSpeed: 0
   isWisp: 0
@@ -1044,6 +1046,8 @@ MonoBehaviour:
   isLightningTower: 0
   isSpike: 0
   towerIsPurchased: 0
+  BlessedRangeMultiplier: 0
+  BlessedSpeedMultiplier: 0
 --- !u!114 &5785617775563735010
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1079,6 +1083,8 @@ MonoBehaviour:
   burnTimeText: {fileID: 0}
   splashRadiusText: {fileID: 5675370298427007588}
   splashDamageText: {fileID: 0}
+  blessingRadiusText: {fileID: 0}
+  blessingSpeedText: {fileID: 0}
 --- !u!61 &5785617775563735011
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1945,7 +1951,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.10299999, y: -0.043000028}
+  m_AnchoredPosition: {x: -0.18000004, y: -0.043000028}
   m_SizeDelta: {x: 1, y: 1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5511395242901921883
@@ -2005,8 +2011,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 0.225
-  m_fontSizeBase: 0.225
+  m_fontSize: 0.22
+  m_fontSizeBase: 0.22
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -2041,7 +2047,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -0.37191212, y: -0.5020815, z: -0.59212434, w: 1.1215057}
+  m_margin: {x: -0.37191212, y: -0.5020815, z: -0.80406797, w: 1.1215057}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -2553,6 +2559,7 @@ MonoBehaviour:
     m_Bits: 0
   audio: {fileID: 1185473828648011470}
   changeTargetType: 0
+  towerBlessed: 0
   color: {r: 1, g: 0, b: 0, a: 1}
 --- !u!1 &7908044985819268736
 GameObject:
@@ -2690,6 +2697,7 @@ MonoBehaviour:
     m_Bits: 0
   audio: {fileID: 1185473828648011470}
   changeTargetType: 0
+  towerBlessed: 0
   color: {r: 1, g: 0, b: 0, a: 1}
 --- !u!1 &7920882198869898554
 GameObject:
@@ -2726,7 +2734,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.103, y: 0.797}
+  m_AnchoredPosition: {x: -0.18000004, y: 0.797}
   m_SizeDelta: {x: 1, y: 1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4147950592387426875
@@ -2786,8 +2794,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 0.225
-  m_fontSizeBase: 0.225
+  m_fontSize: 0.22
+  m_fontSizeBase: 0.22
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -2822,7 +2830,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -0.37191212, y: 0.63927335, z: -0.59212434, w: 0}
+  m_margin: {x: -0.37191212, y: 0.63927335, z: -0.77379036, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -2894,7 +2902,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.10299999, y: 0.487}
+  m_AnchoredPosition: {x: -0.18, y: 0.487}
   m_SizeDelta: {x: 1, y: 1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &12304740082667900
@@ -2952,8 +2960,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 0.225
-  m_fontSizeBase: 0.225
+  m_fontSize: 0.22
+  m_fontSizeBase: 0.22
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -2988,7 +2996,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -0.37191212, y: 0.65416056, z: -0.5867052, w: 0}
+  m_margin: {x: -0.37191212, y: 0.65416056, z: -0.79864895, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -3029,7 +3037,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.10299999, y: 0.179}
+  m_AnchoredPosition: {x: -0.18000004, y: 0.179}
   m_SizeDelta: {x: 1, y: 1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6039220817639057194
@@ -3125,7 +3133,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -0.37191212, y: 0.64423573, z: -0.61417913, w: 0}
+  m_margin: {x: -0.37191212, y: 0.64423573, z: -0.79584527, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0

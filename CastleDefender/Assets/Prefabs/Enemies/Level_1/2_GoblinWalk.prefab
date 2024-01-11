@@ -116,6 +116,8 @@ MonoBehaviour:
   damagePoints: {fileID: 5813940902399081196, guid: a6e613e5f67e86549b7bca1bc5c0a17c, type: 3}
   showEnemyHealth: 0
   healthbarHolder: {fileID: 1580573165840785467}
+  anim: {fileID: 0}
+  isOgreBoss: 0
 --- !u!95 &187897841036862286
 Animator:
   serializedVersion: 5
@@ -172,6 +174,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 187897841036862282}
   speed: 1.5
+  LevelOne: 1
+  LevelTwo: 0
+  LevelThree: 0
   pathIndex: 0
 --- !u!61 &895302174736237420
 BoxCollider2D:

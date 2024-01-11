@@ -20,7 +20,6 @@ public class Arrow : MonoBehaviour
     private void FixedUpdate()
     {
         if (!target) return;
-
         Vector2 direction = (target.position - transform.position).normalized;
         rb.velocity = direction * arrowSpeed;
 
@@ -34,17 +33,18 @@ public class Arrow : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D other)
     {
         if (other == null || other.gameObject == null) return;
+        if (other.gameObject.CompareTag("Path") || other.gameObject.CompareTag("Obstacles")) return;
 
         if (other.gameObject.CompareTag("Enemy"))
         {
-
             EnemyVitals e = other.gameObject.GetComponent<EnemyVitals>();
             if (e.isDead == false)
             {
-                e.TakeDamage(damage); 
+                e.TakeDamage(damage);
+                Destroy(gameObject); 
             }
-       }
-       Destroy(gameObject);
+        }
+        Destroy(gameObject);
     }
 
     IEnumerator MissedShot()

@@ -137,6 +137,8 @@ MonoBehaviour:
   damagePoints: {fileID: 5813940902399081196, guid: a6e613e5f67e86549b7bca1bc5c0a17c, type: 3}
   showEnemyHealth: 0
   healthbarHolder: {fileID: 2404324072650289300}
+  anim: {fileID: 0}
+  isOgreBoss: 0
 --- !u!50 &3350586128775569090
 Rigidbody2D:
   serializedVersion: 4
@@ -198,7 +200,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 3350586128775569090}
   speed: 1.25
+  LevelOne: 1
   LevelTwo: 0
+  LevelThree: 0
   pathIndex: 0
 --- !u!1 &715944386268884968
 GameObject:

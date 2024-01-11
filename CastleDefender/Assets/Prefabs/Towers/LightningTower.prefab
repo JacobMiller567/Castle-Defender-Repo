@@ -135,7 +135,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.10299999, y: -0.043000028}
+  m_AnchoredPosition: {x: -0.191, y: -0.043000028}
   m_SizeDelta: {x: 1, y: 1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6145357936065704778
@@ -195,8 +195,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 0.225
-  m_fontSizeBase: 0.225
+  m_fontSize: 0.22
+  m_fontSizeBase: 0.22
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -231,7 +231,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -0.37191212, y: -0.5020815, z: -0.59212434, w: 1.1215057}
+  m_margin: {x: -0.37191212, y: -0.5020815, z: -0.7963424, w: 1.1215057}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -374,6 +374,7 @@ MonoBehaviour:
     m_Bits: 0
   audio: {fileID: 8409168764017257352}
   changeTargetType: 0
+  towerBlessed: 0
   color: {r: 1, g: 0, b: 0, a: 1}
 --- !u!1 &3812460626846450039
 GameObject:
@@ -551,6 +552,7 @@ MonoBehaviour:
   TowerLevel: 0
   MaxedLevel: 0
   TowerCost: 65
+  PreviousUpgradeCost: 0
   TowerRange: 0
   TowerSpeed: 0
   isWisp: 0
@@ -560,6 +562,8 @@ MonoBehaviour:
   isLightningTower: 1
   isSpike: 0
   towerIsPurchased: 0
+  BlessedRangeMultiplier: 0
+  BlessedSpeedMultiplier: 0
 --- !u!114 &3812460627115525843
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -595,6 +599,8 @@ MonoBehaviour:
   burnTimeText: {fileID: 0}
   splashRadiusText: {fileID: 0}
   splashDamageText: {fileID: 0}
+  blessingRadiusText: {fileID: 0}
+  blessingSpeedText: {fileID: 0}
 --- !u!61 &3812460627115525844
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1193,6 +1199,7 @@ MonoBehaviour:
     m_Bits: 0
   audio: {fileID: 8409168764017257352}
   changeTargetType: 0
+  towerBlessed: 0
   color: {r: 1, g: 0, b: 0, a: 1}
 --- !u!1 &3812460627722917162
 GameObject:
@@ -1331,6 +1338,7 @@ MonoBehaviour:
     m_Bits: 0
   audio: {fileID: 8409168764017257352}
   changeTargetType: 0
+  towerBlessed: 0
   color: {r: 1, g: 0, b: 0, a: 1}
 --- !u!1 &3812460627987567112
 GameObject:
@@ -1769,7 +1777,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.10299999, y: -0.131}
+  m_AnchoredPosition: {x: -0.19100001, y: -0.131}
   m_SizeDelta: {x: 1, y: 1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1777618341785846802
@@ -1827,8 +1835,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 0.225
-  m_fontSizeBase: 0.225
+  m_fontSize: 0.22
+  m_fontSizeBase: 0.22
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1863,7 +1871,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -0.37191212, y: 0.64423573, z: -0.59754324, w: 0}
+  m_margin: {x: -0.37191212, y: 0.64423573, z: -0.79203725, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -2280,7 +2288,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -0.08234998, y: 0.050361536}
-  m_SizeDelta: {x: 2, y: 2}
+  m_SizeDelta: {x: 2.2, y: 2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1399146760399645259
 CanvasRenderer:
@@ -2355,7 +2363,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.103, y: 0.797}
+  m_AnchoredPosition: {x: -0.19100001, y: 0.797}
   m_SizeDelta: {x: 1, y: 1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8006083780347940094
@@ -2415,8 +2423,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 0.225
-  m_fontSizeBase: 0.225
+  m_fontSize: 0.22
+  m_fontSizeBase: 0.22
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -2451,7 +2459,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -0.37191212, y: 0.63927335, z: -0.59212434, w: 0}
+  m_margin: {x: -0.37191212, y: 0.63927335, z: -0.7768928, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -2492,7 +2500,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.10299999, y: 0.179}
+  m_AnchoredPosition: {x: -0.19100001, y: 0.179}
   m_SizeDelta: {x: 1, y: 1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8344624826208551358
@@ -2552,8 +2560,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 0.225
-  m_fontSizeBase: 0.225
+  m_fontSize: 0.22
+  m_fontSizeBase: 0.22
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -2588,7 +2596,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -0.37191212, y: 0.64423573, z: -0.59754324, w: 0}
+  m_margin: {x: -0.37191212, y: 0.64423573, z: -0.80176234, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -2629,7 +2637,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.10299999, y: 0.487}
+  m_AnchoredPosition: {x: -0.19100001, y: 0.487}
   m_SizeDelta: {x: 1, y: 1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1609421765968061577
@@ -2660,7 +2668,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Speed: +'
+  m_text: 'Speed: '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2687,8 +2695,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 0.225
-  m_fontSizeBase: 0.225
+  m_fontSize: 0.22
+  m_fontSizeBase: 0.22
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -2723,7 +2731,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -0.37191212, y: 0.65416056, z: -0.5867052, w: 0}
+  m_margin: {x: -0.37191212, y: 0.65416056, z: -0.800648, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0

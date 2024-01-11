@@ -19,9 +19,13 @@ public class MainMenu : MonoBehaviour
     SceneManager.LoadScene("Game Level 1");
   }
 
-  public void NextLevel()
+  public void LoadLevelTwo()
   {
     SceneManager.LoadScene("Game Level 2");
+  }
+  public void LoadLevelThree()
+  {
+    SceneManager.LoadScene("Game Level 3");
   }
 
 

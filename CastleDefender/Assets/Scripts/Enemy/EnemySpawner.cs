@@ -33,6 +33,7 @@ public class EnemySpawner : MonoBehaviour
 
     public bool infiniteMode;
     private bool infiniteMapTwo;
+    private bool infiniteMapThree;
     private float timeSinceLastSpawn;
     private int enemiesAlive;
     private int enemiesLeftToSpawn;
@@ -54,11 +55,12 @@ public class EnemySpawner : MonoBehaviour
 
     void Start()
     {
+        Time.timeScale = 1;
         data = FindObjectOfType<SaveData>();
         healthbarToggle.isOn = data.GetComponent<SaveData>().healthBarShown;
         ShowHealthbar();
 
-        if (CurrentMap == 2)
+        if (CurrentMap == 2 || CurrentMap == 3)
         {
             bool difficultyNormal = data.GetComponent<SaveData>().isDifficultyNormal;
             bool storyMode = data.GetComponent<SaveData>().isStoryMode;
@@ -99,8 +101,11 @@ public class EnemySpawner : MonoBehaviour
         data.isDifficultyNormal = true;
         if (infiniteMapTwo == true)
         {
-            mainMenu.NextLevel();
-
+            mainMenu.LoadLevelTwo();
+        }
+        if (infiniteMapThree == true) // TEST
+        {
+            mainMenu.LoadLevelThree();
         }
         StartCoroutine(StartGame());
     }
@@ -111,7 +116,11 @@ public class EnemySpawner : MonoBehaviour
         data.isDifficultyNormal = false;
         if (infiniteMapTwo == true)
         {
-            mainMenu.NextLevel();
+            mainMenu.LoadLevelTwo();
+        }
+        if (infiniteMapThree == true)
+        {
+            mainMenu.LoadLevelThree();
         }
         StartCoroutine(StartGame());
     }
@@ -132,6 +141,10 @@ public class EnemySpawner : MonoBehaviour
     public void SecondMapInfinite()
     {
         infiniteMapTwo = true;
+    }
+    public void ThirdMapInfinite()
+    {
+        infiniteMapThree = true;
     }
 
     private void Update()
@@ -492,6 +505,54 @@ public class EnemySpawner : MonoBehaviour
                 }
             /// END OF INFINITE ///
             }
+
+            if (CurrentMap == 3) // TEST: Currently only used for Infinite Mode
+            {
+                GameObject enemyPrefab = enemies[enemyType];
+
+                /// INFINITE MODE ///
+                if (enemyType == 0 && infiniteMode == true && currentWave > 1) 
+                {
+                    int getHealth = enemyPrefab.GetComponent<EnemyVitals>().GetEnemyHealth();
+                    if (menu.NormalMode == true)
+                    {
+                        if (currentWave < 15)
+                        {
+                            enemyPrefab.GetComponent<EnemyVitals>().IncreaseHealth(getHealth + (Mathf.RoundToInt(currentWave * 3f) )); 
+                        }
+                        if (currentWave >= 15 && currentWave < 30)
+                        {
+                            enemyPrefab.GetComponent<EnemyVitals>().IncreaseHealth(getHealth + (Mathf.RoundToInt(currentWave * 4f) )); 
+                        }
+                        if (currentWave >= 30)
+                        {
+                            enemyPrefab.GetComponent<EnemyVitals>().IncreaseHealth(getHealth + (Mathf.RoundToInt(currentWave * 4.5f) )); 
+                        }
+                    }
+                    if (menu.HardMode == true)
+                    {
+                        if (currentWave < 15)
+                        {
+                            enemyPrefab.GetComponent<EnemyVitals>().IncreaseHealth(getHealth + (Mathf.RoundToInt(currentWave * 4f) )); 
+                        }
+                        if (currentWave >= 15 && currentWave < 30)
+                        {
+                            enemyPrefab.GetComponent<EnemyVitals>().IncreaseHealth(getHealth + (Mathf.RoundToInt(currentWave * 5f) )); 
+                        }
+                        if (currentWave >= 30)
+                        {
+                            enemyPrefab.GetComponent<EnemyVitals>().IncreaseHealth(getHealth + (Mathf.RoundToInt(currentWave * 6f) )); 
+                        }
+                    }
+            
+                    if (currentWave == 5 || currentWave == 15 || currentWave == 25 || currentWave == 35)
+                    {
+                        // Enemies start at $2 and can max out at $6 per kill
+                        enemyPrefab.GetComponent<EnemyVitals>().IncreaseMoney(1); // increase enemy money dropped
+                    }
+                }
+            /// END OF INFINITE ///
+            }
         }
     }
 
@@ -500,7 +561,7 @@ public class EnemySpawner : MonoBehaviour
     {
         NewEnemyType();
         GameObject enemyPrefab = enemies[enemyType];
-        Instantiate(enemyPrefab, startPoint.position, Quaternion.identity);
+        Instantiate(enemyPrefab, startPoint.position, Quaternion.identity); 
 
         if (active == true) 
         {
@@ -517,6 +578,10 @@ public class EnemySpawner : MonoBehaviour
         if (CurrentMap == 2)
         {
             LevelTwoEnemies();
+        }
+        if (CurrentMap == 3) 
+        {
+            LevelThreeEnemies();
         }
     }
 
@@ -618,7 +683,7 @@ public class EnemySpawner : MonoBehaviour
             if (currentWave == 26)
             {
                 data.GameLevel = 2;
-                mainMenu.NextLevel();
+                mainMenu.LoadLevelTwo();
             }
         }
         
@@ -754,6 +819,19 @@ public class EnemySpawner : MonoBehaviour
             }
         }
         
+        if (infiniteMode == true)
+        {
+            enemyType = 0;
+            if (CheckIfNew[0] == false)
+            {
+                CheckIfNew[0] = true;
+                CheckNewEnemies.Add("Scorpion");
+            }
+        }
+    }
+
+    private void LevelThreeEnemies() // TEST
+    {
         if (infiniteMode == true)
         {
             enemyType = 0;
